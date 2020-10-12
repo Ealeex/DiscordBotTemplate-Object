@@ -11,11 +11,11 @@ const commands = {
     ping: {
         run: async(message, args) => {
             let msg = await message.channel.send(":question:  **Ping?**");
-            msg.edit(`:ping_pong:  **Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms.**`);
+            return msg.edit(`:ping_pong:  **Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms.**`);
         },
         info: {
             name: 'Ping',
-            description: "Sends ping of client.",
+            description: "Returns the bot's ping.",
             usage: ''
         }
     },
@@ -23,7 +23,7 @@ const commands = {
         run: async(message, args) => {
             let output = '';
             Object.keys(commands).map(command => {
-                info = commands[command].info;
+                let info = commands[command].info;
                 output = output + `${info.name}${info.usage!=''?` ${info.usage}`:''}: ${info.description}\n`;
             });
             return message.channel.send(`**Command Help | [Required] {Optional}**\n` + output);
@@ -50,7 +50,7 @@ client.on('message', async(message) => {
     if(!message.content.startsWith(client.config.prefix) || message.author.bot) return;
     args = message.content.substring(client.config.prefix.length).split(" ");
     command = args.shift().toLowerCase();
-    if(commands[command]) commands[command].run(message, args);
+    if(commands[command]) return commands[command].run(message, args);
 });
 
 client.login(client.config.token);
