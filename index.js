@@ -21,21 +21,17 @@ const commands = {
     },
     help: {
         run: async(message, args) => {
-            if(args[0]) {
-
-            } else {
-                let output = '';
-                Object.keys(commands).map(command => {
-                    command = commands[command];
-                    output = output + `${command.info.name}${command.info.usage!=''?` ${command.info.usage}`:''}: ${command.info.description}\n`;
-                });
-                return message.channel.send(`**Commands | [Required] {Optional}**\n` + output + `*Use ${client.config.prefix}help {Command} for specific commands.*`);
-            }
+            let output = '';
+            Object.keys(commands).map(command => {
+                info = commands[command].info;
+                output = output + `${info.name}${info.usage!=''?` ${info.usage}`:''}: ${info.description}\n`;
+            });
+            return message.channel.send(`**Command Help | [Required] {Optional}**\n` + output);
         },
         info: {
             name: 'Help',
             description: "Returns command info.",
-            usage: '{command}'
+            usage: ''
         }
     }
 }
