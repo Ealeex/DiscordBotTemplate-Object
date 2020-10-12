@@ -1,5 +1,6 @@
 // Discord Bot Template - Object Based
 // Made by: Ethan Lee
+// Github: https://github.com/Ealeex/DiscordBotTemplate-Object
 
 const { Client } = require('discord.js');
 const client = new Client({disableEveryone: true, autoReconnect: true});
