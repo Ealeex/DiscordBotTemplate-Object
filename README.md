@@ -6,7 +6,7 @@ This specific template is based off objects.
 ## Template Navigation
 The [If](https://github.com/Ealeex/DiscordBotTemplate-IfStatement) template uses if statements to select commands.\
 The [Switch](https://github.com/Ealeex/DiscordBotTemplate-SwitchStatement) template uses switch statements to select commands.\
-The [Object](https://github.com/Ealeex/DiscordBotTemplate-Object template uses an object to store commands and meta data.\
+The [Object](https://github.com/Ealeex/DiscordBotTemplate-Object) template uses an object to store commands and meta data.\
 The [FileSystem](https://github.com/Ealeex/DiscordBotTemplate-FileSystem) template uses files to store commands and meta data.
 
 ## Preloaded commands
