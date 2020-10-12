@@ -1,4 +1,4 @@
-// Discord Bot Template - Object Based
+// Discord Bot Template - Object
 // Made by: Ethan Lee
 // Github: https://github.com/Ealeex/DiscordBotTemplate-Object
 
@@ -11,11 +11,11 @@ const commands = {
     ping: {
         run: async(message, args) => {
             let msg = await message.channel.send(":question:  **Ping?**");
-            msg.edit(`:ping_pong:  **Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms.**`);
+            msg.edit(`:ping_pong:  **Pong! Latency is ${msg.createdTimestamp - message.createdTimestamp}ms.**`);
         },
         info: {
             name: 'Ping',
-            description: "Sends ping of API and client.",
+            description: "Sends ping of client.",
             usage: ''
         }
     },
